@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+</head>
+<body>
+
+{% if messages %}
+    {% for message in messages %}
+        <h3>{{ message }}</h3>
+    {% endfor %}
+{% endif %}
+
+<h1>Three-Level Password System - Register</h1>
+
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <label>Username:</label>
+    <input type="text" name="username"><br><br>
+
+    <label>Email:</label>
+    <input type="email" name="email"><br><br>
+
+    <label>Password:</label>
+    <input type="password" name="password"><br><br>
+
+    <label>RGB Password:</label>
+    <input type="text" name="rgb_password"><br><br>
+
+    <label>Upload Image:</label>
+    <input type="file" name="image_password"><br><br>
+
+    <button type="submit">Register</button>
+
+</form>
+
+<br><br>
+
+<p>Already Registered?</p>
+<a href="/login/">Login Here</a>
+
+</body>
+</html>

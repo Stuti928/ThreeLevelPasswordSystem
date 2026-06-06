@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Authentication</title>
+</head>
+<body>
+
+<h1>Level 3 Authentication</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Authentication</title>
+</head>
+<body>
+
+<h1>Level 3 Authentication</h1>
+
+{% if error %}
+    <h3>{{ error }}</h3>
+{% endif %}
+
+<form method="POST">
+    {% csrf_token %}
+
+    <label>Enter Image Password:</label>
+    <input type="text" name="image_code">
+
+    <button type="submit">Verify</button>
+</form>
+
+<p>Image Authentication Page</p>
+
+</body>
+</html>

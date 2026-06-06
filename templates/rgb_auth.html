@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RGB Authentication</title>
+</head>
+<body>
+
+<h1>Level 2 Authentication</h1>
+
+{% if error %}
+    <h3>{{ error }}</h3>
+{% endif %}
+
+<form method="POST">
+    {% csrf_token %}
+
+    <label>Enter RGB Password:</label>
+    <input type="text" name="rgb_password">
+
+    <button type="submit">Verify</button>
+</form>
+
+</body>
+</html>

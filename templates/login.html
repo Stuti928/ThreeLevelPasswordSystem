@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+</head>
+<body>
+
+{% if error %}
+    <h3>{{ error }}</h3>
+{% endif %}
+
+{% if messages %}
+    {% for message in messages %}
+        <h3>{{ message }}</h3>
+    {% endfor %}
+{% endif %}
+
+<h1>Login - Level 1 Authentication</h1>
+
+<form method="POST">
+    {% csrf_token %}
+
+    <label>Email:</label>
+    <input type="email" name="email"><br><br>
+
+    <label>Password:</label>
+    <input type="password" name="password"><br><br>
+
+    <button type="submit">Login</button>
+
+</form>
+
+<br><br>
+
+<p>New User?</p>
+<a href="/register/">Register Here</a>
+
+</body>
+</html>
